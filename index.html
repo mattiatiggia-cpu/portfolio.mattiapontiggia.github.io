@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mattia Pontiggia | Creative Director</title>
+    <meta name="description" content="Portfolio of Mattia Pontiggia, creative director and digital artist.">
+    <link rel="stylesheet" href="css/style.css?v=4">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *,
+        *::before,
+        *::after {
+            color: #000000 !important;
+        }
+
+        a,
+        a:link,
+        a:visited,
+        a:hover,
+        a:active {
+            color: #000000 !important;
+            text-decoration: none;
+        }
+
+        /* ── Intro animations ─────────────────────────────── */
+
+        /* 1. Logo: parte al centro-sinistra, sale verso l'alto */
+        @keyframes logoRise {
+            from {
+                transform: translateY(calc(50vh - 5rem));
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* 2. Resto: scende leggermente dall'alto con dissolvenza lunga */
+        @keyframes fadeDown {
+            from {
+                opacity: 0;
+                transform: translateY(-16px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Logo */
+        .logo-intro {
+            animation: logoRise 3s cubic-bezier(0.22, 1, 0.36, 1) both;
+        }
+
+        /* Info block (sinistra bassa) */
+        .info-intro {
+            opacity: 0;
+            animation: fadeDown 3s ease both;
+            animation-delay: 1.5s;
+        }
+
+        /* Immagine destra */
+        .image-intro {
+            opacity: 0;
+            animation: fadeDown 3s ease both;
+            animation-delay: 0.8s;
+        }
+
+        /* Nav bottom */
+        .nav-intro {
+            opacity: 0;
+            animation: fadeDown 3s ease both;
+            animation-delay: 2.2s;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="split-layout">
+
+        <!-- LEFT COLUMN -->
+        <div class="left-pane">
+            <a href="index.html" class="logo logo-intro">Mattia Pontiggia</a>
+
+            <div class="left-pane-bottom info-intro">
+                <div class="info-block">
+                    <div class="info-row">
+                        <span class="info-num">I.</span>
+                        <p class="info-text">For full capabilities and inquiries:<br><a
+                                href="mailto:mattiatiggia@gmail.com">mattiatiggia@gmail.com</a></p>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-num">II.</span>
+                        <p class="info-text">Milan based.<br></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT COLUMN: full-bleed image -->
+        <div class="right-pane image-intro">
+            <img src="assets/project1.png" alt="Mattia Pontiggia showcase">
+        </div>
+
+    </div>
+
+    <nav class="global-bottom-nav nav-intro">
+        <a href="index.html">Home</a>
+        <a href="work.html">Fashion Works</a>
+        <a href="other-works.html">Other Works</a>
+        <a href="information.html">Information</a>
+    </nav>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+
+</html>

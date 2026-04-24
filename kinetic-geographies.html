@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kinetic Geographies | Mattia Pontiggia</title>
+  <meta name="description" content="Kinetic Geographies project by Mattia Pontiggia.">
+  <link rel="stylesheet" href="css/style.css?v=5">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      color: #000000 !important;
+    }
+
+    a,
+    a:link,
+    a:visited,
+    a:hover,
+    a:active {
+      color: #000000 !important;
+      text-decoration: none;
+    }
+
+    /* Template Styles */
+    .custom-project-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 8rem 5vw 8rem;
+    }
+
+    .project-header {
+      margin-bottom: 3rem;
+    }
+
+    .project-meta {
+      display: flex;
+      gap: 2rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid #000;
+      padding-bottom: 1rem;
+    }
+
+    .project-title {
+      font-size: clamp(2.5rem, 5vw, 5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-top: 4rem;
+      margin-bottom: 2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 0.5rem;
+    }
+
+    .project-content-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 4rem;
+      margin-bottom: 4rem;
+    }
+
+    @media (max-width: 900px) {
+      .project-content-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    .project-info-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .info-block h3 {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5rem;
+    }
+
+    .info-block p,
+    .info-block a {
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .info-block a {
+      text-decoration: underline !important;
+      text-underline-offset: 4px;
+    }
+
+    .project-description {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      max-width: 800px;
+    }
+
+    /* Moodboard & Palette */
+    .moodboard-container {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .moodboard-main img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    .placeholder-box {
+      background: #f5f5f5;
+      border: 1px dashed #ccc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #999 !important;
+      font-size: 0.9rem;
+      border-radius: 8px;
+    }
+
+    .moodboard-main {
+      min-height: 400px;
+    }
+
+    .palette-container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .palette-swatch {
+      flex: 1;
+      min-height: 80px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    /* Implementation Schema */
+    .schema-grid {
+      display: grid;
+      grid-template-columns: 1fr 2.5fr 1fr;
+      gap: 1.5rem;
+      align-items: center;
+      margin-bottom: 4rem;
+      position: relative;
+    }
+
+    @media (max-width: 900px) {
+      .schema-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .schema-center-col {
+        order: -1;
+        /* Move center to top on mobile */
+      }
+    }
+
+    .schema-node {
+      position: relative;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 0.75rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      background: #fff;
+    }
+
+    .schema-node .badge {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      color: #fff !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+    }
+
+    .schema-node .node-media {
+      background: #f5f5f5;
+      border-radius: 8px;
+      aspect-ratio: 4/3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.75rem;
+      color: #999 !important;
+      font-size: 0.8rem;
+      border: 1px dashed #ccc;
+      overflow: hidden;
+    }
+
+    .schema-node .node-media img,
+    .schema-node .node-media video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .schema-node.final-node .node-media {
+      aspect-ratio: auto;
+      border: none;
+      background: transparent;
+    }
+
+    .schema-node p {
+      font-size: 0.65rem;
+      margin: 0;
+      line-height: 1.3;
+    }
+
+    .schema-node strong {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    /* Shooting Grid */
+    .shooting-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 4rem;
+    }
+
+    .shooting-horizontal {
+      grid-column: 1 / -1;
+      min-height: 60vh;
+    }
+
+    .shooting-vertical {
+      min-height: 80vh;
+    }
+
+    .shooting-grid .placeholder-box {
+      border: none;
+      background: #eaeaea;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="page-header">
+    <a href="index.html" class="logo">Mattia Pontiggia</a>
+    <a href="work.html" style="display: block; font-size: 0.75rem; font-weight: 500; text-transform: uppercase; margin-top: 0.3rem; letter-spacing: 0.05em;">&larr; Fashion Works</a>
+  </header>
+
+  <main class="page-main custom-project-container">
+
+    <!-- PROJECT HEADER -->
+    <div class="project-header">
+      <div class="project-meta">
+        <span>2025</span>
+        <span>Fashion Design, AI</span>
+      </div>
+      <h1 class="project-title">Kinetic Geographies</h1>
+    </div>
+
+    <!-- EXPLANATION -->
+    <div class="project-content-grid">
+      <!-- SIDEBAR INFO -->
+      <div class="project-info-sidebar">
+        <div class="info-block">
+          <h3>Location \ Year</h3>
+          <p>Politecnico di Milano | 2026</p>
+        </div>
+        <div class="info-block">
+          <h3>Full Presentation</h3>
+          <a href="https://drive.google.com/file/d/14rC-2FnjF6DlhgTp6Ux3mC9IAel3Qx09/view?usp=sharing" target="_blank"
+            rel="noopener noreferrer">View on Google Drive</a>
+        </div>
+      </div>
+
+      <!-- MAIN DESCRIPTION -->
+      <div class="project-description">
+        <p><strong>Kinetic Geographies</strong> – Artificial A(I)rchive project explores the
+          relationship between fashion, memory and technology, drawing inspiration from Calvino’s "Invisible Cities" and
+          Gianfranco Ferré’s archive.<br>
+          <br>
+          The process combines archival research, analysis of light and movement using TouchDesigner and
+          experimentation with AI tools to generate new lines, shapes and volumes. <br>
+          <br>
+          The ideas are then reinterpreted through three cities (Eutropia, Zora, Eudossia), transforming the original
+          garments into new hybrid objects that bridge fashion and storytelling. The result is a collection that
+          combines
+          an algorithmic approach with design sensibility, where memory and innovation interact to create new formal
+          possibilities.
+        </p>
+      </div>
+    </div>
+
+    <!-- MOODBOARD & PALETTE -->
+    <h2 class="section-title">Moodboard \ Palette</h2>
+    <div class="moodboard-container">
+      <!-- Main Moodboard Image Placeholder -->
+      <div class="moodboard-main">
+        <img src="assets/Kinetic Geographies/moodboard.jpg" alt="Moodboard">
+      </div>
+      <!-- Palette Swatches -->
+      <div class="palette-container">
+        <div class="palette-swatch" style="background-color: #E3E4DB; color: #fff !important;">Eutropia mutable
+          light</div>
+        <div class="palette-swatch" style="background-color: #9EA7BF; color: #fff !important;">Zora’s air</div>
+        <div class="palette-swatch" style="background-color: #85867E; color: #fff !important">Ferré ashline</div>
+        <div class="palette-swatch" style="background-color: #333846; color: #fff !important">Ottavia
+          suspension blu</div>
+        <div class="palette-swatch" style="background-color: #303030; color: #fff !important">Basalt tailoring</div>
+      </div>
+    </div>
+
+    <!-- IMPLEMENTATION SCHEMA -->
+    <h2 class="section-title">Creation Process</h2>
+    <div class="schema-grid">
+
+      <svg id="schema-lines"
+        style="position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:-1;"></svg>
+
+      <!-- LEFT COLUMN -->
+      <div class="schema-col">
+        <div class="schema-node node-1a">
+          <div class="badge" style="background:#d4a5a5;">1.a</div>
+          <div class="node-media">
+            <video autoplay loop muted playsinline style="width:100%; height:100%; object-fit:cover;">
+              <source src="assets/Kinetic Geographies/Schema/movement.mp4" type="video/mp4">
+            </video>
+          </div>
+          <p><strong>Movement detecting</strong>Touch Designer</p>
+        </div>
+        <div class="schema-node node-2a">
+          <div class="badge" style="background:#a9c2a2;">2.a</div>
+          <div class="node-media">
+            <img src="assets/Kinetic Geographies/Schema/light1.png" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <p><strong>Lines detecting</strong>Handmade (Procreate)</p>
+        </div>
+        <div class="schema-node node-3a">
+          <div class="badge" style="background:#b2a2c2;">3.a</div>
+          <div class="node-media">
+            <img src="assets/Kinetic Geographies/Schema/ligtht2.png" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <p><strong>Sketch development</strong>MJ, The New Black, Nano Banana, Chatgpt</p>
+        </div>
+      </div>
+
+      <!-- CENTER COLUMN -->
+      <div class="schema-col schema-center-col">
+        <div class="schema-node final-node node-5" style="border:none; padding:0;">
+          <div class="badge" style="background:#d1d1d1; z-index:10;">5</div>
+          <div class="node-media"
+            style="display:flex; gap:0.5rem; background:transparent; border:none; min-height:unset;">
+            <img src="assets/Kinetic Geographies/Schema/final.png"
+              style="flex:1; width:50%; object-fit:cover; border-radius:8px;">
+            <img src="assets/Kinetic Geographies/Schema/final2.png"
+              style="flex:1; width:50%; object-fit:cover; border-radius:8px;">
+          </div>
+          <p style="margin-top:1rem;"><strong>Final result</strong></p>
+        </div>
+        <div class="schema-node node-4" style="margin: 2rem auto 0; max-width: 250px;">
+          <div class="badge" style="background:#92b4c8;">4</div>
+          <div class="node-media">
+            <img src="assets/Kinetic Geographies/Schema/tog1.png" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <p><strong>Resulting Sketch</strong>MJ, The New Black, Nano Banana, Chatgpt</p>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div class="schema-col">
+        <div class="schema-node node-1b">
+          <div class="badge" style="background:#d4a5a5;">1.b</div>
+          <div class="node-media">
+            <video autoplay loop muted playsinline style="width:100%; height:100%; object-fit:cover;">
+              <source src="assets/Kinetic Geographies/Schema/lightdetection.mp4" type="video/mp4">
+            </video>
+          </div>
+          <p><strong>Light detecting</strong>Touch Designer</p>
+        </div>
+        <div class="schema-node node-2b">
+          <div class="badge" style="background:#a9c2a2;">2.b</div>
+          <div class="node-media">
+            <video autoplay loop muted playsinline
+              style="width:100%; height:100%; object-fit:cover; filter: invert(100%);">
+              <source src="assets/Kinetic Geographies/Schema/movement1.mp4" type="video/mp4">
+            </video>
+          </div>
+          <p><strong>Shape detecting</strong>Touch Designer</p>
+        </div>
+        <div class="schema-node node-3b">
+          <div class="badge" style="background:#b2a2c2;">3.b</div>
+          <div class="node-media">
+            <img src="assets/Kinetic Geographies/Schema/movement 2.png"
+              style="width:100%; height:100%; object-fit:cover; filter: invert(100%);">
+          </div>
+          <p><strong>Shape development</strong>MJ, The New Black, Nano Banana, Chatgpt</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SHOOTING -->
+    <h2 class="section-title">Shooting</h2>
+    <div class="shooting-grid">
+      <!-- Orizzontale -->
+      <div class="shooting-horizontal">
+        <img src="assets/Kinetic Geographies/fotoinsieme.png" alt="Shooting Horizontal"
+          style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+      </div>
+      <!-- Verticale 1 -->
+      <div class="shooting-vertical">
+        <img src="assets/Kinetic Geographies/foto2.png" alt="Shooting Vertical 1"
+          style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+      </div>
+      <!-- Verticale 2 -->
+      <div class="shooting-vertical">
+        <img src="assets/Kinetic Geographies/foto1.png" alt="Shooting Vertical 2"
+          style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+      </div>
+    </div>
+
+    <!-- RUNWAY & SHOW -->
+    <h2 class="section-title">Runway \ Show</h2>
+
+    <!-- Planimetria & Render -->
+    <div
+      style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 4rem;">
+      <div>
+        <h3
+          style="font-size: 0.9rem; margin-bottom: 1rem; text-transform: uppercase; font-weight: 600; letter-spacing: 0.05em;">
+          Planimetry</h3>
+        <div>
+          <img src="assets/Kinetic Geographies/Planimetry 1.png" alt="Planimetria"
+            style="width: 100%; height: auto; border-radius: 8px;">
+        </div>
+      </div>
+      <div>
+        <h3
+          style="font-size: 0.9rem; margin-bottom: 1rem; text-transform: uppercase; font-weight: 600; letter-spacing: 0.05em;">
+          Render</h3>
+        <div>
+          <img src="assets/Kinetic Geographies/runway.png" alt="Render"
+            style="width: 100%; height: auto; border-radius: 8px;">
+        </div>
+      </div>
+    </div>
+
+    <!-- Runway Video -->
+    <div style="margin-bottom: 4rem;">
+      <h3
+        style="font-size: 0.9rem; margin-bottom: 1rem; text-transform: uppercase; font-weight: 600; letter-spacing: 0.05em;">
+        Runway</h3>
+      <div style="position: relative; width: 100%; border-radius: 8px; overflow: hidden;">
+        <video controls style="width: 100%; height: auto; display: block;">
+          <source src="assets/Kinetic Geographies/runway.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+  </main>
+
+  <nav class="global-bottom-nav">
+    <a href="index.html">Home</a>
+    <a href="work.html">Fashion Works</a>
+    <a href="other-works.html">Other Works</a>
+    <a href="information.html">Information</a>
+  </nav>
+
+  <script>
+    function drawSchemaLines() {
+      const svg = document.getElementById('schema-lines');
+      const grid = document.querySelector('.schema-grid');
+      if (!svg || !grid) return;
+
+      svg.innerHTML = '';
+      if (window.innerWidth <= 900) return;
+
+      const gridRect = grid.getBoundingClientRect();
+
+      function getCenter(el, edge) {
+        const rect = el.getBoundingClientRect();
+        let x = rect.left - gridRect.left + rect.width / 2;
+        let y = rect.top - gridRect.top;
+        if (edge === 'bottom') y += rect.height;
+        if (edge === 'right') { y += rect.height / 2; x = rect.right - gridRect.left; }
+        if (edge === 'left') { y += rect.height / 2; x = rect.left - gridRect.left; }
+        return { x, y };
+      }
+
+      function drawLine(el1, edge1, el2, edge2) {
+        const p1 = getCenter(el1, edge1);
+        const p2 = getCenter(el2, edge2);
+
+        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        let d = `M ${p1.x} ${p1.y} C ${p1.x} ${(p1.y + p2.y) / 2}, ${p2.x} ${(p1.y + p2.y) / 2}, ${p2.x} ${p2.y}`;
+        if (edge1 === 'right' || edge1 === 'left') {
+          d = `M ${p1.x} ${p1.y} C ${(p1.x + p2.x) / 2} ${p1.y}, ${(p1.x + p2.x) / 2} ${p2.y}, ${p2.x} ${p2.y}`;
+        }
+        if (edge1 === 'top' || edge2 === 'top') {
+          d = `M ${p1.x} ${p1.y} C ${p1.x} ${(p1.y + p2.y) / 2}, ${p2.x} ${(p1.y + p2.y) / 2}, ${p2.x} ${p2.y}`;
+        }
+
+        path.setAttribute('d', d);
+        path.setAttribute('stroke', '#000');
+        path.setAttribute('stroke-width', '1.5');
+        path.setAttribute('fill', 'none');
+        path.setAttribute('marker-end', 'url(#arrow)');
+        svg.appendChild(path);
+      }
+
+      svg.innerHTML = `<defs>
+        <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#000" />
+        </marker>
+      </defs>`;
+
+      const nodes = {
+        n1a: document.querySelector('.node-1a'),
+        n2a: document.querySelector('.node-2a'),
+        n3a: document.querySelector('.node-3a'),
+        n1b: document.querySelector('.node-1b'),
+        n2b: document.querySelector('.node-2b'),
+        n3b: document.querySelector('.node-3b'),
+        n4: document.querySelector('.node-4'),
+        n5: document.querySelector('.node-5')
+      };
+
+      if (nodes.n1a && nodes.n2a) drawLine(nodes.n1a, 'bottom', nodes.n2a, 'top');
+      if (nodes.n2a && nodes.n3a) drawLine(nodes.n2a, 'bottom', nodes.n3a, 'top');
+
+      if (nodes.n1b && nodes.n2b) drawLine(nodes.n1b, 'bottom', nodes.n2b, 'top');
+      if (nodes.n2b && nodes.n3b) drawLine(nodes.n2b, 'bottom', nodes.n3b, 'top');
+
+      if (nodes.n3a && nodes.n4) drawLine(nodes.n3a, 'right', nodes.n4, 'left');
+      if (nodes.n3b && nodes.n4) drawLine(nodes.n3b, 'left', nodes.n4, 'right');
+
+      if (nodes.n4 && nodes.n5) drawLine(nodes.n4, 'top', nodes.n5, 'bottom');
+    }
+
+    window.addEventListener('load', () => setTimeout(drawSchemaLines, 100));
+    window.addEventListener('resize', drawSchemaLines);
+  </script>
+  <script type="module" src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Last Day on Earth | Mattia Pontiggia</title>
+  <link rel="stylesheet" href="css/style.css?v=5">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      color: #000000 !important;
+    }
+
+    a,
+    a:link,
+    a:visited,
+    a:hover,
+    a:active {
+      color: #000000 !important;
+      text-decoration: none;
+    }
+
+    /* Template Styles */
+    .custom-project-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 8rem 5vw 8rem;
+    }
+
+    .project-header {
+      margin-bottom: 3rem;
+    }
+
+    .project-meta {
+      display: flex;
+      gap: 2rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid #000;
+      padding-bottom: 1rem;
+    }
+
+    .project-title {
+      font-size: clamp(2.5rem, 5vw, 5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-top: 4rem;
+      margin-bottom: 2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 0.5rem;
+    }
+
+    .project-content-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 4rem;
+      margin-bottom: 4rem;
+    }
+
+    @media (max-width: 900px) {
+      .project-content-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    .project-info-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .info-block h3 {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5rem;
+    }
+
+    .info-block p,
+    .info-block a {
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .info-block a {
+      text-decoration: underline !important;
+      text-underline-offset: 4px;
+    }
+
+    .project-description {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      max-width: 800px;
+    }
+
+    .placeholder-box {
+      background: #f5f5f5;
+      border: 1px dashed #ccc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #999 !important;
+      font-size: 0.9rem;
+      border-radius: 8px;
+    }
+
+    /* Moodboard & Palette with Text */
+    .moodboard-layout {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 4rem;
+      margin-bottom: 4rem;
+    }
+
+    @media (max-width: 900px) {
+      .moodboard-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    .moodboard-container {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      height: 100%;
+      justify-content: space-between;
+    }
+
+    .palette-container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .palette-swatch {
+      flex: 1;
+      min-height: 80px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .poem-text {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      font-family: "Courier New", Courier, monospace;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      margin-bottom: -0.2em;
+    }
+
+    .poem-text p {
+      margin-bottom: 0;
+    }
+
+    /* Standard Grid (Upcycled Garments) */
+    .standard-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    /* Shooting Grid */
+    .shooting-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 4rem;
+    }
+
+    .shooting-horizontal {
+      grid-column: 1 / -1;
+      min-height: 60vh;
+    }
+
+    .shooting-vertical {
+      min-height: 80vh;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="page-header">
+    <a href="index.html" class="logo">Mattia Pontiggia</a>
+    <a href="work.html"
+      style="display: block; font-size: 0.75rem; font-weight: 500; text-transform: uppercase; margin-top: 0.3rem; letter-spacing: 0.05em;">&larr;
+      Fashion Works</a>
+  </header>
+
+  <main class="page-main custom-project-container">
+
+    <!-- PROJECT HEADER -->
+    <div class="project-header">
+      <div class="project-meta">
+        <span>2025</span>
+        <span>Fashion Design</span>
+      </div>
+      <h1 class="project-title">The Last Day on Earth</h1>
+    </div>
+
+    <!-- CONCEPT / EXPLANATION -->
+    <div class="project-content-grid">
+      <!-- SIDEBAR INFO -->
+      <div class="project-info-sidebar">
+        <div class="info-block">
+          <h3>Location \ Year</h3>
+          <p>Politecnico di Milano | 2025</p>
+        </div>
+        <div class="info-block">
+          <h3>Full Presentation</h3>
+          <a href="https://drive.google.com/file/d/1NHB08sm3I2zKDU4aRF6UEeUYqrK6eubY/view?usp=sharing" target="_blank"
+            rel="noopener noreferrer">View on Google Drive</a>
+        </div>
+        <div class="info-block">
+          <h3>Articles</h3>
+          <a href="https://www.instagram.com/p/DRMjxvYDbE0/?img_index=1" target="_blank"
+            rel="noopener noreferrer">Instagram</a>
+        </div>
+      </div>
+
+      <!-- MAIN DESCRIPTION -->
+      <div class="project-description">
+        <p>Born out of the “MADEBACK” workshop at the Politecnico di Milano, <strong>The
+            Last Day on Earth</strong> tells the story of the end of a teenage romance, the moment when the simplest
+          gestures become rituals of farewell.
+          Through the reworking of sweatshirts and garments associated with youth pop culture, the project creates a
+          ritualistic corset dress.
+
+        </p>
+      </div>
+    </div>
+
+    <!-- MOODBOARD & PALETTE -->
+    <h2 class="section-title">Moodboard \ Palette</h2>
+    <div class="moodboard-layout">
+
+      <!-- Column 1: Image & Palette -->
+      <div class="moodboard-container">
+        <div class="moodboard-main">
+          <img src="assets/the%20last%20day%20on%20earth/mood.jpg" alt="Moodboard"
+            style="width: 100%; height: auto; border-radius: 8px;">
+        </div>
+        <div class="palette-container">
+          <div class="palette-swatch" style="background-color: #E3E4DB; color: #000;">Void</div>
+          <div class="palette-swatch" style="background-color: #bf9eb4; color: #000;">Remember?</div>
+        </div>
+      </div>
+
+      <!-- Column 2: Poem Text -->
+      <div class="poem-text">
+        <p>
+          At the end, we have shared the same breath together:<br>
+          The trees and the soups<br>
+          The petroleum and the beasts.<br>
+          Me and you are children of terror and our gentleness was<br>
+          not the absence of violence’s fruit,<br>
+          but the seed in its shadows.<br>
+          [...] <br>
+          A name. A word. A shape. The last piece of noise I still<br>
+          carried.<br>
+          <br>
+          Somewhere,<br>
+          a door closes with the gentlest sound.<br>
+          Maybe that’s what peace looks like,<br>
+          when Terror finally dreams.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- UPCYCLED GARMENTS -->
+    <h2 class="section-title">Upcycled garments</h2>
+    <div style="margin-bottom: 4rem;">
+      <img src="assets/the%20last%20day%20on%20earth/garments.png" alt="Upcycled Garments"
+        style="width: 100%; height: auto; border-radius: 8px;">
+    </div>
+
+    <!-- SHOOTING -->
+    <h2 class="section-title">Shooting</h2>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 4rem;">
+      <img src="assets/the%20last%20day%20on%20earth/DSC_0135%20(1).jpg" alt="Shooting"
+        style="width: 100%; height: auto; border-radius: 8px;">
+      <img src="assets/the%20last%20day%20on%20earth/Sfondo.png" alt="Shooting"
+        style="width: 100%; height: auto; border-radius: 8px;">
+      <img src="assets/the%20last%20day%20on%20earth/DSC_0141.jpg" alt="Shooting"
+        style="width: 100%; height: auto; border-radius: 8px;">
+      <img src="assets/the%20last%20day%20on%20earth/DSC_0182.jpg" alt="Shooting"
+        style="width: 100%; height: auto; border-radius: 8px;">
+    </div>
+
+  </main>
+
+  <nav class="global-bottom-nav">
+    <a href="index.html">Home</a>
+    <a href="work.html">Fashion Works</a>
+    <a href="other-works.html">Other Works</a>
+    <a href="information.html">Information</a>
+  </nav>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+
+</html>

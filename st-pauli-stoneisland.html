@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stone Island x St. Pauli | Mattia Pontiggia</title>
+  <link rel="stylesheet" href="css/style.css?v=5">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      color: #000000 !important;
+    }
+
+    a,
+    a:link,
+    a:visited,
+    a:hover,
+    a:active {
+      color: #000000 !important;
+      text-decoration: none;
+    }
+
+    /* Template Styles */
+    .custom-project-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 8rem 5vw 8rem;
+    }
+
+    .project-header {
+      margin-bottom: 3rem;
+    }
+
+    .project-meta {
+      display: flex;
+      gap: 2rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid #000;
+      padding-bottom: 1rem;
+    }
+
+    .project-title {
+      font-size: clamp(2.5rem, 5vw, 5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-top: 4rem;
+      margin-bottom: 2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 0.5rem;
+    }
+
+    .project-content-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 4rem;
+      margin-bottom: 4rem;
+    }
+
+    @media (max-width: 900px) {
+      .project-content-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    .project-info-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .info-block h3 {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5rem;
+    }
+
+    .info-block p,
+    .info-block a {
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .info-block a {
+      text-decoration: underline !important;
+      text-underline-offset: 4px;
+    }
+
+    .project-description {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      max-width: 800px;
+    }
+
+    .placeholder-box {
+      background: #f5f5f5;
+      border: 1px dashed #ccc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #999 !important;
+      font-size: 0.9rem;
+      border-radius: 8px;
+    }
+
+    /* Merch Plan Styles */
+    .merch-section {
+      margin-bottom: 4rem;
+    }
+
+    .merch-category-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+      letter-spacing: 0.05em;
+    }
+
+    .merch-grid {
+      display: grid;
+      gap: 2rem;
+      align-items: end;
+    }
+
+    /* 4 columns for Sport, 5 columns for Outdoor */
+    .grid-sport {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .grid-outdoor {
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    @media (max-width: 900px) {
+
+      .grid-sport,
+      .grid-outdoor {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 500px) {
+
+      .grid-sport,
+      .grid-outdoor {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .merch-item {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .merch-item-title {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .merch-item-media {
+      width: 100%;
+      aspect-ratio: 1;
+      /* Keep them square placeholders */
+    }
+
+    /* Path/Route Styles */
+    .path-route-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="page-header">
+    <a href="index.html" class="logo">Mattia Pontiggia</a>
+    <a href="work.html" style="display: block; font-size: 0.75rem; font-weight: 500; text-transform: uppercase; margin-top: 0.3rem; letter-spacing: 0.05em;">&larr; Fashion Works</a>
+  </header>
+
+  <main class="page-main custom-project-container">
+
+    <!-- PROJECT HEADER -->
+    <div class="project-header">
+      <div class="project-meta">
+        <span>2025</span>
+        <span>Fashion Design, Visual Narrative</span>
+      </div>
+      <h1 class="project-title">Stone Island x St. Pauli</h1>
+    </div>
+
+    <!-- CONCEPT / EXPLANATION -->
+    <div class="project-content-grid">
+      <!-- SIDEBAR INFO -->
+      <div class="project-info-sidebar">
+        <div class="info-block">
+          <h3>Location \ Year</h3>
+          <p>Politecnico di Milano | 2025</p>
+        </div>
+        <div class="info-block">
+          <h3>Full Presentation</h3>
+          <a href="https://drive.google.com/file/d/1PZ0P1Aab_Ssf9LXFHTkQagEoztl5tRJP/view?usp=sharing" target="_blank"
+            rel="noopener noreferrer">View on Google Drive</a>
+        </div>
+      </div>
+
+      <!-- MAIN DESCRIPTION -->
+      <div class="project-description">
+        <p><strong>Stone Island x FC St. Pauli</strong> – A short fashion film and capsule collection exploring the
+          relationship between garment, body, and football culture. Directed and produced end-to-end.<br>
+          <br>
+          [Inserisci qui la spiegazione dettagliata del Concept e la visione del progetto]
+        </p>
+      </div>
+    </div>
+
+    <!-- PATH / ROUTE -->
+    <h2 class="section-title">Path \ Route</h2>
+    <div class="path-route-container">
+      <div class="placeholder-box" style="min-height: 400px; border:none; background:#eaeaea;">
+        [Inserisci qui la grafica o video del Path / Route]
+      </div>
+    </div>
+
+    <!-- MERCH PLAN -->
+    <h2 class="section-title">Capsule Collection</h2>
+
+    <!-- SPORT CATEGORY -->
+    <div class="merch-section">
+      <h3 class="merch-category-title">Sport</h3>
+      <div class="merch-grid grid-sport">
+        <!-- Item 1 -->
+        <div class="merch-item">
+          <div class="merch-item-title">Pre-Match Kit</div>
+          <div class="placeholder-box merch-item-media" style="border:none; background:#eaeaea;">[Foto]</div>
+        </div>
+        <!-- Item 2 -->
+        <div class="merch-item">
+          <div class="merch-item-title">Pre-Match Jacket</div>
+          <div class="placeholder-box merch-item-media" style="border:none; background:#eaeaea;">[Foto]</div>
+        </div>
+        <!-- Item 3 -->
+        <div class="merch-item">
+          <div class="merch-item-title">Match Kit</div>
+          <div class="placeholder-box merch-item-media" style="border:none; background:#eaeaea;">[Foto]</div>
+        </div>
+        <!-- Item 4 -->
+        <div class="merch-item">
+          <div class="merch-item-title">Hat</div>
+          <div class="placeholder-box merch-item-media" style="border:none; background:#eaeaea;">[Foto]</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- OUTDOOR/APPAREL CATEGORY -->
+    <div class="merch-section">
+      <h3 class="merch-category-title">Outdoor/Apparel</h3>
+      <div class="merch-grid grid-outdoor">
+        <!-- Item 1 -->
+        <div class="merch-item">
+          <div class="merch-item-title">Thermosensitive Coat</div>
+          <div class="placeholder-box merch-item-media" style="aspect-ratio: 4/5; border:none; background:#eaeaea;">
+            [Foto]</div>
+        </div>
+        <!-- Item 2 -->
+        <div class="merch-item">
+          <div class="merch-item-title">Tees</div>
+          <div class="placeholder-box merch-item-media" style="aspect-ratio: 4/5; border:none; background:#eaeaea;">
+            [Foto]</div>
+        </div>
+        <!-- Item 3 -->
+        <div class="merch-item">
+          <div class="merch-item-title">Hoodie</div>
+          <div class="placeholder-box merch-item-media" style="aspect-ratio: 4/5; border:none; background:#eaeaea;">
+            [Foto]</div>
+        </div>
+        <!-- Item 4 -->
+        <div class="merch-item">
+          <div class="merch-item-title">Thermosensitive Knit</div>
+          <div class="placeholder-box merch-item-media" style="aspect-ratio: 4/5; border:none; background:#eaeaea;">
+            [Foto]</div>
+        </div>
+        <!-- Item 5 -->
+        <div class="merch-item">
+          <div class="merch-item-title">Scarf</div>
+          <div class="placeholder-box merch-item-media" style="aspect-ratio: 4/5; border:none; background:#eaeaea;">
+            [Foto]</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SHOOTING -->
+    <h2 class="section-title">Shooting</h2>
+    <div
+      style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 4rem;">
+      <div class="placeholder-box" style="min-height: 400px; border:none; background:#eaeaea;">[Foto Shooting]</div>
+      <div class="placeholder-box" style="min-height: 400px; border:none; background:#eaeaea;">[Foto Shooting]</div>
+      <div class="placeholder-box" style="min-height: 400px; border:none; background:#eaeaea;">[Foto Shooting]</div>
+    </div>
+
+    <!-- FASHION FILM / VIDEO -->
+    <div style="margin-bottom: 4rem;">
+      <h2 class="section-title" style="margin-top: 2rem;">Fashion Film</h2>
+      <div
+        style="position: relative; width: 100%; border-radius: 8px; overflow: hidden; background:#eaeaea; min-height: 60vh;"
+        class="placeholder-box">
+        <span>[Inserisci qui il Fashion Film]</span>
+        <!-- Quando avrai il video, rimuovi lo span e usa il tag qui sotto:
+        <video controls style="width: 100%; height: auto; display: block;">
+          <source src="assets/percorso-video.mp4" type="video/mp4">
+        </video>
+        -->
+      </div>
+    </div>
+
+  </main>
+
+  <nav class="global-bottom-nav">
+    <a href="index.html">Home</a>
+    <a href="work.html">Fashion Works</a>
+    <a href="other-works.html">Other Works</a>
+    <a href="information.html">Information</a>
+  </nav>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+
+</html>
