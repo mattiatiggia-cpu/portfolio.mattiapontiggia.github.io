@@ -174,12 +174,22 @@
 
     @media (max-width: 900px) {
       .schema-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
       }
 
       .schema-center-col {
-        order: -1;
-        /* Move center to top on mobile */
+        grid-column: 1 / -1;
+        order: 1; /* Move center to bottom on mobile */
+        display: flex;
+        flex-direction: column-reverse; /* Node 4 above Node 5 */
+        align-items: center;
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .schema-node.node-4 {
+        margin: 0 !important;
       }
     }
 
@@ -505,7 +515,7 @@
       if (!svg || !grid) return;
 
       svg.innerHTML = '';
-      if (window.innerWidth <= 900) return;
+      svg.innerHTML = '';
 
       const gridRect = grid.getBoundingClientRect();
 
@@ -563,10 +573,15 @@
       if (nodes.n1b && nodes.n2b) drawLine(nodes.n1b, 'bottom', nodes.n2b, 'top');
       if (nodes.n2b && nodes.n3b) drawLine(nodes.n2b, 'bottom', nodes.n3b, 'top');
 
-      if (nodes.n3a && nodes.n4) drawLine(nodes.n3a, 'right', nodes.n4, 'left');
-      if (nodes.n3b && nodes.n4) drawLine(nodes.n3b, 'left', nodes.n4, 'right');
-
-      if (nodes.n4 && nodes.n5) drawLine(nodes.n4, 'top', nodes.n5, 'bottom');
+      if (window.innerWidth <= 900) {
+        if (nodes.n3a && nodes.n4) drawLine(nodes.n3a, 'bottom', nodes.n4, 'top');
+        if (nodes.n3b && nodes.n4) drawLine(nodes.n3b, 'bottom', nodes.n4, 'top');
+        if (nodes.n4 && nodes.n5) drawLine(nodes.n4, 'bottom', nodes.n5, 'top');
+      } else {
+        if (nodes.n3a && nodes.n4) drawLine(nodes.n3a, 'right', nodes.n4, 'left');
+        if (nodes.n3b && nodes.n4) drawLine(nodes.n3b, 'left', nodes.n4, 'right');
+        if (nodes.n4 && nodes.n5) drawLine(nodes.n4, 'top', nodes.n5, 'bottom');
+      }
     }
 
     window.addEventListener('load', () => setTimeout(drawSchemaLines, 100));
