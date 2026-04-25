@@ -500,24 +500,46 @@ p, span, li, td, th {
    RESPONSIVE
    ============================================================ */
 @media (max-width: 900px) {
+  .page-main {
+    padding: 6rem 1.5rem 6rem 1.5rem;
+  }
+
+  .page-header {
+    padding: 1.5rem 1.5rem;
+  }
+
+  .global-bottom-nav {
+    width: 100vw;
+    padding: 1.25rem 1.5rem;
+    gap: 0.5rem;
+    justify-content: space-between;
+  }
+
+  .global-bottom-nav a {
+    font-size: 0.75rem;
+    white-space: nowrap;
+  }
+
   .split-layout {
     flex-direction: column;
-    height: auto;
+    height: 100vh;
     min-height: 100vh;
   }
 
   .left-pane {
     width: 100%;
-    min-height: 100vh;
+    height: 50vh;
+    min-height: 50vh;
+    padding: 1.5rem 1.5rem;
+  }
+
+  .left-pane-bottom {
+    padding-bottom: 2rem;
   }
 
   .right-pane {
     width: 100%;
     height: 50vh;
-  }
-
-  .global-bottom-nav {
-    width: 100vw;
   }
 
   .work-link {
@@ -540,6 +562,17 @@ p, span, li, td, th {
     display: none;
   }
 
+  .cv-intro-row {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .cv-portrait-wrap {
+    width: 100%;
+    max-width: 250px;
+    margin-bottom: 0;
+  }
+
   .cv-section {
     flex-direction: column;
     gap: 1.5rem;
@@ -552,5 +585,10 @@ p, span, li, td, th {
 
   .cv-year {
     min-width: unset;
+  }
+
+  .project-meta {
+    flex-direction: column;
+    gap: 0.5rem;
   }
 }
